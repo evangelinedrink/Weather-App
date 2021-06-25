@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 
+//Weather App Tutorial is from this video: https://www.youtube.com/watch?v=IxuqmfO6p28&t=1164s 
+
 function App() {
   return (
     <div className="App">
