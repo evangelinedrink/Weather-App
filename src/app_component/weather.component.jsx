@@ -6,21 +6,21 @@ const Weather = (props) => { //Props are properties of the constructor's object 
         <div className= "container"> {/*Container div*/}
             <div className="cards"> {/*Placing the name of the city and country in the cards tag*/}
                 <h1>
-                    {props.city}, {props.country} {/*When you call city and country in the App.js file, this values for the props will change */}
+                    {props.city}, {props.country} {/*When you call city and country in the App.js file, this values for the props will change. These values will change based on the data that we get from Open Weather API. */}
                 </h1>
                 <h5 className= "py-4">  {/*py-4 is the padding margins (p stands for padding). p stands for padding, y stands for top and bottom. 4 is the size. https://mdbootstrap.com/docs/react/utilities/spacing/ */}
                     {/*Using the Weather Icons. From this website: https://github.com/erikflowers/weather-icons */}
                     <i className="wi wi-day-sunny display-1"/> {/*This places the sunny day icon using the Weather Icons. Display-1 tells about the size of the icon */}
                 </h5>
                 <h1 className="py-2">
-                    77&deg;F {/*Displays the degree in Fahrenheit. */}
+                    {props.temp_fahrenheit}&deg;F {/*This means we are getting the data from Open Weather APi and placing it in this variable. This is why we use curly braces. &deg;F displays the degree in Fahrenheit.*/}
                 </h1>
 
                 {/*Creating a command that will show the min and max temperatures. First argument is the min temperature, second argument is the max temperature. */}
-                {minMaxTemp(61, 80)}
+                {minMaxTemp(props.temp_min, props.temp_max)}
 
                 {/*Displays the description of the weather. */}
-                <h4 className="py-3">Sunny</h4>
+                <h4 className="py-3">{props.description}</h4>
             </div>
         </div>
     );
@@ -44,7 +44,6 @@ function minMaxTemp(min,max) {
     );
 }
 
-//Stopped at 6 minutes and 10 seconds in the video
 
 //Exporting the Weather constant
 export default Weather;
