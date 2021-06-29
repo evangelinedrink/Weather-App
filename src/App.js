@@ -26,9 +26,11 @@ class App extends React.Component {
       error: false,
     };
     this.getWeather(); //Calling getWeather method in the constructor
-
+    this.weatherIcon= { //Specifying the weather icon property
+      Thunderstorm: "wi-thunderstorm" //specifying the weather icon for Thunderstorm
 
   }
+}
 
 //Since the temperature in Open Weather is in Kelvin, we need to convert it to Fahrenheit.
 calFahrenheit(temp) {
@@ -55,6 +57,7 @@ getWeather= async () => {
     temp_max: this.calFahrenheit(response.main.temp_max), //Converting the maximum temperature from Kelvin to Fahrenheit
     temp_min: this.calFahrenheit(response.main.temp_min), //Converting the minimum temperature from Kelvin to Fahrenheit
     description: response.weather[0].description, //This gets the first value of the weather array, which is the description of the weather (this can be seen in the Object tab in the Console, which is gotten from the Open Weather app)
+    icon: this.weatherIcon.Thunderstorm,
   })
 }
 
@@ -68,6 +71,7 @@ getWeather= async () => {
         temp_max= {this.state.temp_max}
         temp_min={this.state.temp_min}
         description={this.state.description}
+        weatherIcon={this.state.icon}//Specifying the Weather Icon property
         /> {/*Calling the Weather component from weather.component.jsx */}
     </div>
     );

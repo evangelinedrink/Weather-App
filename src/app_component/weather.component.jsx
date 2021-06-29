@@ -10,7 +10,7 @@ const Weather = (props) => { //Props are properties of the constructor's object 
                 </h1>
                 <h5 className= "py-4">  {/*py-4 is the padding margins (p stands for padding). p stands for padding, y stands for top and bottom. 4 is the size. https://mdbootstrap.com/docs/react/utilities/spacing/ */}
                     {/*Using the Weather Icons. From this website: https://github.com/erikflowers/weather-icons */}
-                    <i className="wi wi-day-sunny display-1"/> {/*This places the sunny day icon using the Weather Icons. Display-1 tells about the size of the icon */}
+                    <i className={`wi ${props.weatherIcon} display-1`}/> {/*This places the weather icon using the Weather Icons. Display-1 tells about the size of the icon. The ${} is calling the weather icon property */}
                 </h5>
                 <h1 className="py-2">
                     {props.temp_fahrenheit}&deg;F {/*This means we are getting the data from Open Weather APi and placing it in this variable. This is why we use curly braces. &deg;F displays the degree in Fahrenheit.*/}
