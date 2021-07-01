@@ -3,8 +3,8 @@ import React from "react";
 const Weather = (props) => { //Props are properties of the constructor's object in the WeatherAPICall class located in App.js
     //All the JSX code will be in the return statement.
     return (
-        <div className= "container"> {/*Container div*/}
-            <div className="cards"> {/*Placing the name of the city and country in the cards tag*/}
+        <div className= "container"> {/*Container div. */}
+            <div className="cards pt-4"> {/*Placing the name of the city and country in the cards tag. Placing top padding margins to the title of the city and country that we are getting the weather data from. (pt-4 means padding top-4*/}
                 <h1>
                     {props.city}, {props.country} {/*When you call city and country in the App.js file, this values for the props will change. These values will change based on the data that we get from Open Weather API. */}
                 </h1>
