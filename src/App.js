@@ -5,10 +5,11 @@ import "bootstrap/dist/css/bootstrap.min.css"; //Importing Bootstrap
 import Weather from "./app_component/weather.component.jsx"; //The ./ says to go to another folder, which is the app_component folder.  The weather.component is the weather.component.jsx file.
 import "weather-icons/css/weather-icons.css"; //Importing the Weather Icons displays
 import weatherAPIKey from "./bin/weatherAPIKey.js"; //Importing the Weather API Key
-import { tsUndefinedKeyword } from "@babel/types";
+//import { tsUndefinedKeyword } from "@babel/types";
+import Form from "./app_component/form.component";
 
 //Weather App Tutorial is from this video: https://www.youtube.com/watch?v=IxuqmfO6p28&t=1164s 
-//Stopped at 26 minutes and 19 seconds
+//Stopped at 35 minutes and 24 seconds
 const API_key= weatherAPIKey;
 
 class App extends React.Component {
@@ -100,6 +101,8 @@ getWeather= async () => {
   render() {
     return (
       <div className="App">
+        <Form /> {/*Calling the Form Component from form.component.jsx */}
+        {/*Calling the Weather component from weather.component.jsx */}
         <Weather 
         city={this.state.city} 
         country={this.state.country} 
@@ -108,7 +111,7 @@ getWeather= async () => {
         temp_min={this.state.temp_min}
         description={this.state.description}
         weatherIcon={this.state.icon}//Specifying the Weather Icon property
-        /> {/*Calling the Weather component from weather.component.jsx */}
+        /> 
     </div>
     );
   }
