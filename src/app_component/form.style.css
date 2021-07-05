@@ -5,7 +5,7 @@ form {
 form input[name="city"], /*Using the name attribute in the form to specify what to do CSS to.*/
 form input[name="country"] {
     background-color: transparent;
-    color: white;
+    /*color: white; */
     /*border: 0; /*Remove the border of the City and Country Input fields.*/
     border-bottom: 2px solid whitesmoke;
     border-radius: 0;

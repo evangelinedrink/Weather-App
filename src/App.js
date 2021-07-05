@@ -99,8 +99,8 @@ getWeather= async (event) => { //Specifying the event in the parameters because 
     //Being able to access the city and country that the user searched for, so it can be seen in the Weather app.
     //This also updates the this.state data that is located in the Constructor
     this.setState({
-      city: response.name, //Obtained from the response's json file that shows the city under the title name.
-      country: response.sys.country, //Obtained from the response's json file that shows the country under the sys tab and then country label.
+      city: `${response.name}, ${response.sys.country}`, //Obtaining the city and country from the fetched file that was taken from OpenWeather and placing it under the title name.
+      //country: response.sys.country, //Obtained from the response's json file that shows the country under the sys tab and then country label.
       fahrenheit: this.calFahrenheit(response.main.temp), //The temperature taken from the Open Weather data is in Kelvin, so we need to convert it to Fahrenheit.
       temp_max: this.calFahrenheit(response.main.temp_max), //Converting the maximum temperature from Kelvin to Fahrenheit
       temp_min: this.calFahrenheit(response.main.temp_min), //Converting the minimum temperature from Kelvin to Fahrenheit

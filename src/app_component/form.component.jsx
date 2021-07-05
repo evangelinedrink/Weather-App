@@ -6,13 +6,7 @@ const Form= props => {
     return(
         <div className="container">
             {/*Determining if the Error() function will show up. If user types in the City and Country and hits the "Get Weather" button, then there will not be an error.  Otherwise, an error will occur. */}
-            <div>
-                if({props.error}) {
-                    error() //If there is an error, the error function will start running
-                } else {
-                    null //No error will show up if the user types in the city and country to get the weather from.
-                }
-            </div>
+            <div> {props.error? error(): null} </div> {/*Using the ternary operatory for the If/Else statement. If there is an error, the error function will start running. No error will show up if the user types in the city and country to get the weather from. */}
 
             {/*{props.loadweather} is an event handler */}
             <form onSubmit={props.loadweather}> {/*onSubmit is an event that will take what the user typed in for City and Country and then use this input to search for the weather in that location by changing the api_call constant located in App.js file */}
