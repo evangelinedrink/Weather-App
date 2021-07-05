@@ -105,7 +105,7 @@ getWeather= async (event) => { //Specifying the event in the parameters because 
       temp_max: this.calFahrenheit(response.main.temp_max), //Converting the maximum temperature from Kelvin to Fahrenheit
       temp_min: this.calFahrenheit(response.main.temp_min), //Converting the minimum temperature from Kelvin to Fahrenheit
       description: response.weather[0].description, //This gets the first value of the weather array, which is the description of the weather (this can be seen in the Object tab in the Console, which is gotten from the Open Weather app)
-      
+      error: false,  //When the city and country is specified, the error will be set as false. This will also reset the error message if initially the user didn't specify the city and country, the error message will disappear.
     });
     //Calling the get_WeatherIcon() method and specifying in the parameter the this.weatherIcon (which is obtained from OpenWeather for that city)
     this.get_WeatherIcon(this.weatherIcon, response.weather[0].id) //First Parameter is what will be placed in the get_WeatherIcon() method.  The first parameter for get_WeatherIcon() is icon and the second parameter is rangeID (looking at the Console,the weather condition ID is found in weather array, index 0, and then id). We have to use response because this is what we get from fetching the data from Open Weather

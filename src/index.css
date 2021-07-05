@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: url("./Clouds.jpg") ; /*Using the Clouds image as the background*/
+  background-size: cover; /*cover will cover the entire space of the app.*/
 }
 
 code {
